@@ -6,5 +6,15 @@
 </head>
 <body>
 <h1>Welcome</h1>
+{% if books:%}
+    {% for book in books: %}
+        <ul>
+            <li>{{book['title']}}-{{book['author']}}-{{book['rating']}}</li>
+        </ul>
+    {%endfor%}
+{% else: %}
+    <p>There are currently no books here</p>
+{% endif %}
+<a href="/add">Add new book</a>
 </body>
 </html>
